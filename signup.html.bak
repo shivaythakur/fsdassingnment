@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="en">
+ <head>
+ <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <title>Document</title>
+  <style>
+  .bg-img {
+
+  background-image:"img.jpg" ;
+
+  min-height: 380px;
+
+
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+#shivay{
+  width: 130px;
+  height: 50px;
+  border-radius:5px;
+  background-color: red;
+  position: relative;
+  -webkit-animation-name: example;
+  -webkit-animation-duration: 4s; 
+  -webkit-animation-iteration-count: 2; 
+  -webkit-animation-direction: alternate;
+  animation-name: example;
+  animation-duration: 4s;
+  animation-iteration-count: 10000;
+  animation-direction: alternate;  
+}
+
+
+@-webkit-keyframes example {
+  0%   {background-color:red; left:0px; top:0px;}
+  25%  {background-color:yellow; left:200px; top:0px;}
+  50%  {background-color:blue; left:200px; top:200px;}
+  75%  {background-color:green; left:0px; top:200px;}
+  100% {background-color:red; left:0px; top:0px;}
+}
+
+
+@keyframes example {
+  0%   {background-color:red; left:0px; top:0px;}
+  25%  {background-color:yellow; left:200px; top:0px;}
+  50%  {background-color:blue; left:200px; top:200px;}
+  75%  {background-color:green; left:0px; top:200px;}
+  100% {background-color:red; left:0px; top:0px;}
+}
+</style>
+ </head>
+ <body background="C:\Users\admin\Desktop\PROJECT\Upgradwebsiteproject\img.jpg">
+ <p id="shivay">hey!foodie.com</p>
+  <center>
+  <br><br>
+<div class="card" style="width: 38rem;">
+  <div class="card-body">
+  
+<h2><b>Sign Up Form</b></h2>
+<div class="bg-img">
+
+<form class="needs-validation" novalidate>
+  <div class="form-row">
+    <div class="col-md-4 mb-3">
+      <label for="validationCustom01">First name</label>
+      <input type="text" class="form-control" id="validationCustom01" placeholder="First name" autofocus required>
+      <div class="invalid-feedback">
+        Provide a firstname
+      </div>
+    </div>
+    <div class="col-md-4 mb-3">
+      <label for="validationCustom02">Last name</label>
+      <input type="text" class="form-control" id="validationCustom02" placeholder="Last name"  required>
+      <div class="invalid-feedback">
+        Provide a lastname
+      </div>
+    </div>
+    <div class="col-md-4 mb-3">
+      <label for="validationCustomUsername">Username</label>
+      <div class="input-group">
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="inputGroupPrepend">@</span>
+        </div>
+        <input type="text" class="form-control" id="validationCustomUsername" placeholder="Username"  min="4" max="10" aria-describedby="inputGroupPrepend" required>
+        <div class="invalid-feedback">
+          Please choose a username.
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="form-row">
+    <div class="col-md-6 mb-3">
+      <label for="validationCustom03">City</label>
+      <input type="text" class="form-control" id="validationCustom03" placeholder="City" required>
+      <div class="invalid-feedback">
+        Please provide a valid city.
+      </div>
+    </div>
+    <div class="col-md-3 mb-3">
+      <label for="validationCustom04">State</label>
+      <input type="text" class="form-control" id="validationCustom04" placeholder="State" required>
+      <div class="invalid-feedback">
+        Please provide a valid state.
+      </div>
+    </div>
+
+    <div class="col-md-3 mb-3">
+      <label for="validationCustom05">Pincode</label>
+      <input type="number" class="form-control" id="validationCustom05" placeholder="Pincode"   pattern="[0-9]{5}" required>
+      <div class="invalid-feedback">
+        Please provide a valid pin.
+      </div>
+    </div>
+  </div>
+   <div class="form-row">
+    <div class="col-md-6 mb-3">
+      <label for="validationCustom01">E-mail</label>
+      <input type="e-mail" class="form-control" id="validationCustom01" placeholder="abc@gmail.com" pattern="[A-Z][a-z0-9][@gmail.com]" required>
+      <div class="invalid-feedback">
+        Provide an email.
+      </div>
+    </div>
+    <div class="col-md-6 mb-3">
+      <label for="validationCustom02">Password</label>
+      <input type="Password" class="form-control" id="validationCustom02" pattern="[A-Z][a-z]{5}"  required>
+      <div class="invalid-feedback">
+        Your password must contain first letter as capital letter and length should be greater than or equal to 5 characters.
+      </div>
+    </div>
+   
+  </div>
+  <div class="form-group">
+    <div class="form-check">
+      <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+      <label class="form-check-label" for="invalidCheck">
+        Agree to terms and conditions
+      </label>
+      <div class="invalid-feedback">
+        You must agree before submitting.
+      </div>
+    </div>
+  </div>
+  <button class="btn btn-primary" type="submit" onclick="check()">Submit form</button>
+</form>
+
+<script>
+
+(function() {
+  'use strict';
+  window.addEventListener('load', function() {
+
+    var forms = document.getElementsByClassName('needs-validation');
+    var validation = Array.prototype.filter.call(forms, function(form) {
+      form.addEventListener('submit', function(event) {
+        if (form.checkValidity() === false) {
+          event.preventDefault();
+          event.stopPropagation();
+        }
+        form.classList.add('was-validated');
+      }, false);
+    });
+  }, false);
+})();
+function check()
+{
+	alert("We have sent you an email , please verify.");
+}
+</script>
+</div>
+ </div>
+ </div>
+</center>
+ </body>
+</html>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+</script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+</script>
